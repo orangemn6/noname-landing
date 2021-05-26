@@ -12,26 +12,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300" rel="stylesheet">
 	<link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/reset.css">
-	<script>
-	    window.addEventListener('load', function () {
-        var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        var source = audioCtx.createBufferSource();
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'audio.mp3');
-        xhr.responseType = 'arraybuffer';
-        xhr.addEventListener('load', function (r) {
-            audioCtx.decodeAudioData(
-                    xhr.response, 
-                    function (buffer) {
-                        source.buffer = buffer;
-                        source.connect(audioCtx.destination);
-                        source.loop = false;
-                    });
-            source.start(0);
-        });
-        xhr.send();
-    });
-    </script>
 	<link rel="stylesheet" href="css/styles.css">
 	<!-- <link rel="stylesheet" href="css/themes/indigo-white.css"> -->
 	<!-- <link rel="stylesheet" href="css/themes/green-white.css"> -->
